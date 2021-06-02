@@ -1,0 +1,13 @@
+# Distance between nodes
+  -> 	1. calculate normally
+	2. claculate through edge of the layer.
+  -> Although case 2 is sufficient, making edge and drawing it does not matter.
+
+# Supporting node from another layer
+  ->	Calculate the most nearest node in next layer, and set it in the list of the tuples
+  ->	(current node, supporting node)
+  ->	If there is not a supporting node, set the tuple as (current node, -1)
+
+# Spatial Attack
+  ->	Set the default point as (random, random)
+  -> 	Also, calculate the distance as same as finding the distance between nodes

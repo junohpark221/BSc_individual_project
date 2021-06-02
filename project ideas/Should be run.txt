@@ -1,0 +1,39 @@
+# Find Inter-T
+0. node size별로 inter-T값이 어떻게 나오나?
+
+# Mimic Buldyrev Model
+1. ER graph 범위 넓히고 반복횟수 30회 이상 --> 머신러닝 사용 계획
+   --> 1) 대략 2.2 ~ 2.65 / 반복횟수 50회, 총 100스텝 (o)
+2. ER graph 노드 사이즈 늘리기
+   --> 1) 1-1과 동일 조건, 노드 사이즈 1000 (o)
+   --> 2) 1-1과 동일 조건, 노드 사이즈 1500 (o)
+
+# ER vs RGG Model
+3. Mean Alive nodes 범위 세분화 -> 조금 더 부드러운 그래프 (500 nodes 50 attack)
+   --> 1) 0.03 ~ 0.08 / 반복횟수 30회, 총 100스텝 (o)						Buldy_RGG_50_rep30_03_0005
+
+4. Attack size와 intra-thres 조정 --> mean degree에 영향 받는지 분석 (buldyrev와 같은지)
+   --> 1) node 500 attack size 100으로 조정, 0.03 ~ 0.08 반복횟수 30회, 총 100스텝 (o)			Buldy_RGG_100_rep30_03_0005
+   --> 2) node 500 attack size 200으로 조정, 0.035 ~ 0.095 반복횟수 30회, 총 100스텝 (o)		Buldy_RGG_200_rep30_035_0006
+   --> 3) node 300 attack size 30으로 조정, 0.04 ~ 0.11 반복횟수 30회, 총 100스텝(o)			Buldy_RGG_30_rep30_04_0007
+   --> 4) node 1000 attack size 100으로 조정, 0.02 ~ 0.06 / 반복횟수 30회, 총 80스텝 (-)		Buldy_RGG_1000_rep30_02_0005
+
+5. (intra Rand) vs (inter Rand) --> node 죽은 이유 분석 --> 왜 그런 결과가 나오는지??
+
+6. (intra Rand) vs (inter Rand) --> step별로 node 죽은 이유 분석
+
+7. (inter RGG) vs (inter Rand) --> Far node dead in each node --> 퍼지는 영향 보여주기
+   --> 1) node 500 attack 50에서 thres 0.045  반복횟수 100회					Buldy_RGG_50_rep100_045
+   --> 2) node 500 attack 50에서 thres 0.067  반복횟수 100회					Buldy_RGG_50_rep100_069
+
+   --> 3) node 500 attack 100에서 thres 0.045  반복횟수 100회					Buldy_RGG_100_rep100_05
+   --> 4) node 500 attack 100에서 thres 0.067  반복횟수 100회					Buldy_RGG_100_rep100_073
+
+8. (inter RGG) vs (inter Rand) --> Far node who alive --> 퍼지는 영향 보여주기
+
+9. Step 수 비교 -->
+
+
+
+
+10. supporting node 갯수 증가 --> attack이 퍼지는데 어떠한 영향을 주는지 (far attack point, far alive node, graph centre)
